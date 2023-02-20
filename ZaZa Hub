@@ -1,0 +1,1252 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib(" | ZaZa Hub V10 |                      | Added New Things |        ", "BloodTheme")
+
+-- MAIN
+local Main = Window:NewTab("FE Scripts")
+local MainSection = Main:NewSection("FE Scripts")
+
+
+MainSection:NewButton("Back/Front Flip", "(Z) FRONT FLIP (X) BACKFLIP (C) INFINITE JUMP", function()
+
+
+--[[ Info ]]--
+
+local ver = "2.00"
+local scriptname = "feFlip"
+
+
+--[[ Keybinds ]]--
+
+local FrontflipKey = Enum.KeyCode.Z
+local BackflipKey = Enum.KeyCode.X
+local AirjumpKey = Enum.KeyCode.C
+
+
+--[[ Dependencies ]]--
+
+local ca = game:GetService("ContextActionService")
+local zeezy = game:GetService("Players").LocalPlayer
+local h = 0.0174533
+local antigrav
+
+
+--[[ Functions ]]--
+
+function zeezyFrontflip(act,inp,obj)
+	if inp == Enum.UserInputState.Begin then
+		zeezy.Character.Humanoid:ChangeState("Jumping")
+		wait()
+		zeezy.Character.Humanoid.Sit = true
+		for i = 1,360 do 
+			delay(i/720,function()
+			zeezy.Character.Humanoid.Sit = true
+				zeezy.Character.HumanoidRootPart.CFrame = zeezy.Character.HumanoidRootPart.CFrame * CFrame.Angles(-h,0,0)
+			end)
+		end
+		wait(0.55)
+		zeezy.Character.Humanoid.Sit = false
+	end
+end
+
+function zeezyBackflip(act,inp,obj)
+	if inp == Enum.UserInputState.Begin then
+		zeezy.Character.Humanoid:ChangeState("Jumping")
+		wait()
+		zeezy.Character.Humanoid.Sit = true
+		for i = 1,360 do
+			delay(i/720,function()
+			zeezy.Character.Humanoid.Sit = true
+				zeezy.Character.HumanoidRootPart.CFrame = zeezy.Character.HumanoidRootPart.CFrame * CFrame.Angles(h,0,0)
+			end)
+		end
+		wait(0.55)
+		zeezy.Character.Humanoid.Sit = false
+	end
+end
+
+function zeezyAirjump(act,inp,obj)
+	if inp == Enum.UserInputState.Begin then
+		zeezy.Character:FindFirstChildOfClass'Humanoid':ChangeState("Seated")
+		wait()
+		zeezy.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")	
+	end
+end
+
+
+--[[ Binds ]]--
+
+ca:BindAction("zeezyFrontflip",zeezyFrontflip,false,FrontflipKey)
+ca:BindAction("zeezyBackflip",zeezyBackflip,false,BackflipKey)
+ca:BindAction("zeezyAirjump",zeezyAirjump,false,AirjumpKey)
+
+--[[ Load Message ]]--
+
+print(scriptname .. " " .. ver .. " loaded successfully")
+print("made by Zeezy#7203")
+
+local notifSound = Instance.new("Sound",workspace)
+notifSound.PlaybackSpeed = 1.5
+notifSound.Volume = 0.15
+notifSound.SoundId = "rbxassetid://170765130"
+notifSound.PlayOnRemove = true
+notifSound:Destroy()
+game.StarterGui:SetCore("SendNotification", {Title = "feFlip", Text = "feFlip loaded successfully!", Icon = "rbxassetid://505845268", Duration = 5, Button1 = "Okay"})
+end)
+
+
+
+MainSection:NewButton("Infinite Yield", "FE Admin Commands", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+MainSection:NewButton("Speed & Jump ", "Changes Jump Power And Walkspeed ", function()
+loadstring("\45\45\32\71\117\105\32\116\111\32\76\117\97\10\45\45\32\86\101\114\115\105\111\110\58\32\51\46\50\10\10\45\45\32\73\110\115\116\97\110\99\101\115\58\10\10\108\111\99\97\108\32\83\99\114\101\101\110\71\117\105\32\61\32\73\110\115\116\97\110\99\101\46\110\101\119\40\34\83\99\114\101\101\110\71\117\105\34\41\10\108\111\99\97\108\32\77\97\105\110\32\61\32\73\110\115\116\97\110\99\101\46\110\101\119\40\34\70\114\97\109\101\34\41\10\108\111\99\97\108\32\84\101\120\116\76\97\98\101\108\32\61\32\73\110\115\116\97\110\99\101\46\110\101\119\40\34\84\101\120\116\76\97\98\101\108\34\41\10\108\111\99\97\108\32\85\73\67\111\114\110\101\114\32\61\32\73\110\115\116\97\110\99\101\46\110\101\119\40\34\85\73\67\111\114\110\101\114\34\41\10\108\111\99\97\108\32\85\73\67\111\114\110\101\114\95\50\32\61\32\73\110\115\116\97\110\99\101\46\110\101\119\40\34\85\73\67\111\114\110\101\114\34\41\10\108\111\99\97\108\32\116\121\112\101\119\115\32\61\32\73\110\115\116\97\110\99\101\46\110\101\119\40\34\84\101\120\116\66\111\120\34\41\10\108\111\99\97\108\32\115\101\116\119\115\32\61\32\73\110\115\116\97\110\99\101\46\110\101\119\40\34\84\101\120\116\66\117\116\116\111\110\34\41\10\108\111\99\97\108\32\116\121\112\101\106\112\32\61\32\73\110\115\116\97\110\99\101\46\110\101\119\40\34\84\101\120\116\66\111\120\34\41\10\108\111\99\97\108\32\115\101\116\106\112\32\61\32\73\110\115\116\97\110\99\101\46\110\101\119\40\34\84\101\120\116\66\117\116\116\111\110\34\41\10\108\111\99\97\108\32\67\108\111\115\101\32\61\32\73\110\115\116\97\110\99\101\46\110\101\119\40\34\84\101\120\116\66\117\116\116\111\110\34\41\10\108\111\99\97\108\32\85\73\67\111\114\110\101\114\95\51\32\61\32\73\110\115\116\97\110\99\101\46\110\101\119\40\34\85\73\67\111\114\110\101\114\34\41\10\108\111\99\97\108\32\79\112\101\110\32\61\32\73\110\115\116\97\110\99\101\46\110\101\119\40\34\84\101\120\116\66\117\116\116\111\110\34\41\10\108\111\99\97\108\32\85\73\67\111\114\110\101\114\95\52\32\61\32\73\110\115\116\97\110\99\101\46\110\101\119\40\34\85\73\67\111\114\110\101\114\34\41\10\10\45\45\80\114\111\112\101\114\116\105\101\115\58\10\10\83\99\114\101\101\110\71\117\105\46\80\97\114\101\110\116\32\61\32\103\97\109\101\46\67\111\114\101\71\117\105\10\10\77\97\105\110\46\78\97\109\101\32\61\32\34\77\97\105\110\34\10\77\97\105\110\46\80\97\114\101\110\116\32\61\32\83\99\114\101\101\110\71\117\105\10\77\97\105\110\46\66\97\99\107\103\114\111\117\110\100\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\53\55\44\32\53\55\44\32\53\55\41\10\77\97\105\110\46\80\111\115\105\116\105\111\110\32\61\32\85\68\105\109\50\46\110\101\119\40\48\46\48\53\51\50\48\56\49\51\56\56\44\32\48\44\32\48\46\48\54\52\48\54\54\56\52\57\54\44\32\48\41\10\77\97\105\110\46\83\105\122\101\32\61\32\85\68\105\109\50\46\110\101\119\40\48\44\32\49\54\51\44\32\48\44\32\50\48\53\41\10\77\97\105\110\46\65\99\116\105\118\101\32\61\32\116\114\117\101\10\77\97\105\110\46\68\114\97\103\103\97\98\108\101\32\61\32\116\114\117\101\10\10\84\101\120\116\76\97\98\101\108\46\80\97\114\101\110\116\32\61\32\77\97\105\110\10\84\101\120\116\76\97\98\101\108\46\66\97\99\107\103\114\111\117\110\100\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\57\51\44\32\57\51\44\32\57\51\41\10\84\101\120\116\76\97\98\101\108\46\83\105\122\101\32\61\32\85\68\105\109\50\46\110\101\119\40\48\44\32\49\54\51\44\32\48\44\32\50\52\41\10\84\101\120\116\76\97\98\101\108\46\70\111\110\116\32\61\32\69\110\117\109\46\70\111\110\116\46\83\111\117\114\99\101\83\97\110\115\10\84\101\120\116\76\97\98\101\108\46\84\101\120\116\32\61\32\34\87\97\108\107\83\112\101\101\100\32\97\110\100\32\74\117\109\112\32\112\111\119\101\114\34\10\84\101\120\116\76\97\98\101\108\46\84\101\120\116\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\48\44\32\48\44\32\48\41\10\84\101\120\116\76\97\98\101\108\46\84\101\120\116\83\105\122\101\32\61\32\49\52\46\48\48\48\10\10\85\73\67\111\114\110\101\114\46\80\97\114\101\110\116\32\61\32\84\101\120\116\76\97\98\101\108\10\10\85\73\67\111\114\110\101\114\95\50\46\80\97\114\101\110\116\32\61\32\77\97\105\110\10\10\116\121\112\101\119\115\46\78\97\109\101\32\61\32\34\116\121\112\101\119\115\34\10\116\121\112\101\119\115\46\80\97\114\101\110\116\32\61\32\77\97\105\110\10\116\121\112\101\119\115\46\66\97\99\107\103\114\111\117\110\100\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\50\53\53\44\32\50\53\53\44\32\50\53\53\41\10\116\121\112\101\119\115\46\80\111\115\105\116\105\111\110\32\61\32\85\68\105\109\50\46\110\101\119\40\48\46\48\54\55\52\56\52\54\54\49\57\44\32\48\44\32\48\46\49\53\49\50\49\57\53\49\55\44\32\48\41\10\116\121\112\101\119\115\46\83\105\122\101\32\61\32\85\68\105\109\50\46\110\101\119\40\48\44\32\49\52\50\44\32\48\44\32\50\55\41\10\116\121\112\101\119\115\46\70\111\110\116\32\61\32\69\110\117\109\46\70\111\110\116\46\83\111\117\114\99\101\83\97\110\115\10\116\121\112\101\119\115\46\84\101\120\116\32\61\32\34\84\121\112\101\32\87\97\108\107\32\83\112\101\101\100\34\10\116\121\112\101\119\115\46\84\101\120\116\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\48\44\32\48\44\32\48\41\10\116\121\112\101\119\115\46\84\101\120\116\83\105\122\101\32\61\32\49\52\46\48\48\48\10\10\115\101\116\119\115\46\78\97\109\101\32\61\32\34\115\101\116\119\115\34\10\115\101\116\119\115\46\80\97\114\101\110\116\32\61\32\77\97\105\110\10\115\101\116\119\115\46\66\97\99\107\103\114\111\117\110\100\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\57\51\44\32\57\51\44\32\57\51\41\10\115\101\116\119\115\46\80\111\115\105\116\105\111\110\32\61\32\85\68\105\109\50\46\110\101\119\40\48\46\48\54\55\52\56\52\54\54\49\57\44\32\48\44\32\48\46\51\49\55\48\55\51\49\57\54\44\32\48\41\10\115\101\116\119\115\46\83\105\122\101\32\61\32\85\68\105\109\50\46\110\101\119\40\48\44\32\49\52\50\44\32\48\44\32\50\53\41\10\115\101\116\119\115\46\70\111\110\116\32\61\32\69\110\117\109\46\70\111\110\116\46\83\111\117\114\99\101\83\97\110\115\10\115\101\116\119\115\46\84\101\120\116\32\61\32\34\83\101\116\32\87\97\108\107\83\112\101\101\100\34\10\115\101\116\119\115\46\84\101\120\116\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\48\44\32\48\44\32\48\41\10\115\101\116\119\115\46\84\101\120\116\83\105\122\101\32\61\32\49\52\46\48\48\48\10\115\101\116\119\115\46\77\111\117\115\101\66\117\116\116\111\110\49\67\108\105\99\107\58\67\111\110\110\101\99\116\40\102\117\110\99\116\105\111\110\40\41\10\9\103\97\109\101\46\80\108\97\121\101\114\115\46\76\111\99\97\108\80\108\97\121\101\114\46\67\104\97\114\97\99\116\101\114\46\72\117\109\97\110\111\105\100\46\87\97\108\107\83\112\101\101\100\32\61\32\116\121\112\101\119\115\46\84\101\120\116\10\101\110\100\41\10\116\121\112\101\106\112\46\78\97\109\101\32\61\32\34\116\121\112\101\106\112\34\10\116\121\112\101\106\112\46\80\97\114\101\110\116\32\61\32\77\97\105\110\10\116\121\112\101\106\112\46\66\97\99\107\103\114\111\117\110\100\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\50\53\53\44\32\50\53\53\44\32\50\53\53\41\10\116\121\112\101\106\112\46\80\111\115\105\116\105\111\110\32\61\32\85\68\105\109\50\46\110\101\119\40\48\46\48\54\49\51\52\57\54\57\51\55\44\32\48\44\32\48\46\53\51\49\55\48\55\50\56\55\44\32\48\41\10\116\121\112\101\106\112\46\83\105\122\101\32\61\32\85\68\105\109\50\46\110\101\119\40\48\44\32\49\52\50\44\32\48\44\32\50\55\41\10\116\121\112\101\106\112\46\70\111\110\116\32\61\32\69\110\117\109\46\70\111\110\116\46\83\111\117\114\99\101\83\97\110\115\10\116\121\112\101\106\112\46\84\101\120\116\32\61\32\34\84\121\112\101\32\74\117\109\112\32\80\111\119\101\114\34\10\116\121\112\101\106\112\46\84\101\120\116\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\48\44\32\48\44\32\48\41\10\116\121\112\101\106\112\46\84\101\120\116\83\105\122\101\32\61\32\49\52\46\48\48\48\10\10\115\101\116\106\112\46\78\97\109\101\32\61\32\34\115\101\116\106\112\34\10\115\101\116\106\112\46\80\97\114\101\110\116\32\61\32\77\97\105\110\10\115\101\116\106\112\46\66\97\99\107\103\114\111\117\110\100\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\57\51\44\32\57\51\44\32\57\51\41\10\115\101\116\106\112\46\80\111\115\105\116\105\111\110\32\61\32\85\68\105\109\50\46\110\101\119\40\48\46\48\54\55\52\56\52\54\54\49\57\44\32\48\44\32\48\46\54\57\55\53\54\49\48\50\54\44\32\48\41\10\115\101\116\106\112\46\83\105\122\101\32\61\32\85\68\105\109\50\46\110\101\119\40\48\44\32\49\52\50\44\32\48\44\32\50\53\41\10\115\101\116\106\112\46\70\111\110\116\32\61\32\69\110\117\109\46\70\111\110\116\46\83\111\117\114\99\101\83\97\110\115\10\115\101\116\106\112\46\84\101\120\116\32\61\32\34\83\101\116\32\74\117\109\112\32\80\111\119\101\114\34\10\115\101\116\106\112\46\84\101\120\116\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\48\44\32\48\44\32\48\41\10\115\101\116\106\112\46\84\101\120\116\83\105\122\101\32\61\32\49\52\46\48\48\48\10\115\101\116\106\112\46\77\111\117\115\101\66\117\116\116\111\110\49\67\108\105\99\107\58\67\111\110\110\101\99\116\40\102\117\110\99\116\105\111\110\40\41\10\9\103\97\109\101\46\80\108\97\121\101\114\115\46\76\111\99\97\108\80\108\97\121\101\114\46\67\104\97\114\97\99\116\101\114\46\72\117\109\97\110\111\105\100\46\74\117\109\112\80\111\119\101\114\32\61\32\116\121\112\101\106\112\46\84\101\120\116\10\101\110\100\41\10\67\108\111\115\101\46\78\97\109\101\32\61\32\34\67\108\111\115\101\34\10\67\108\111\115\101\46\80\97\114\101\110\116\32\61\32\77\97\105\110\10\67\108\111\115\101\46\66\97\99\107\103\114\111\117\110\100\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\57\51\44\32\57\51\44\32\57\51\41\10\67\108\111\115\101\46\80\111\115\105\116\105\111\110\32\61\32\85\68\105\109\50\46\110\101\119\40\48\44\32\48\44\32\48\46\56\56\54\50\56\52\50\51\50\44\32\48\41\10\67\108\111\115\101\46\83\105\122\101\32\61\32\85\68\105\109\50\46\110\101\119\40\48\44\32\49\54\51\44\32\48\44\32\50\51\41\10\67\108\111\115\101\46\70\111\110\116\32\61\32\69\110\117\109\46\70\111\110\116\46\83\111\117\114\99\101\83\97\110\115\10\67\108\111\115\101\46\84\101\120\116\32\61\32\34\67\76\79\83\69\32\34\10\67\108\111\115\101\46\84\101\120\116\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\48\44\32\48\44\32\48\41\10\67\108\111\115\101\46\84\101\120\116\83\105\122\101\32\61\32\49\52\46\48\48\48\10\67\108\111\115\101\46\77\111\117\115\101\66\117\116\116\111\110\49\68\111\119\110\58\67\111\110\110\101\99\116\40\102\117\110\99\116\105\111\110\40\41\10\9\77\97\105\110\46\86\105\115\105\98\108\101\32\61\32\102\97\108\115\101\10\9\79\112\101\110\46\86\105\115\105\98\108\101\32\61\32\116\114\117\101\10\101\110\100\41\10\10\85\73\67\111\114\110\101\114\95\51\46\80\97\114\101\110\116\32\61\32\67\108\111\115\101\10\10\79\112\101\110\46\78\97\109\101\32\61\32\34\79\112\101\110\34\10\79\112\101\110\46\80\97\114\101\110\116\32\61\32\83\99\114\101\101\110\71\117\105\10\79\112\101\110\46\66\97\99\107\103\114\111\117\110\100\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\53\55\44\32\53\55\44\32\53\55\41\10\79\112\101\110\46\80\111\115\105\116\105\111\110\32\61\32\85\68\105\109\50\46\110\101\119\40\48\46\56\51\55\54\50\49\49\53\50\44\32\48\44\32\48\46\52\54\50\51\57\53\53\55\57\44\32\48\41\10\79\112\101\110\46\83\105\122\101\32\61\32\85\68\105\109\50\46\110\101\119\40\48\44\32\57\52\44\32\48\44\32\51\49\41\10\79\112\101\110\46\70\111\110\116\32\61\32\69\110\117\109\46\70\111\110\116\46\83\111\117\114\99\101\83\97\110\115\10\79\112\101\110\46\84\101\120\116\32\61\32\34\79\80\69\78\34\10\79\112\101\110\46\84\101\120\116\67\111\108\111\114\51\32\61\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\48\44\32\48\44\32\48\41\10\79\112\101\110\46\84\101\120\116\83\105\122\101\32\61\32\49\52\46\48\48\48\10\79\112\101\110\46\77\111\117\115\101\66\117\116\116\111\110\49\68\111\119\110\58\67\111\110\110\101\99\116\40\102\117\110\99\116\105\111\110\40\41\10\9\77\97\105\110\46\86\105\115\105\98\108\101\32\61\32\116\114\117\101\10\9\79\112\101\110\46\86\105\115\105\98\108\101\32\61\32\102\97\108\115\101\10\101\110\100\41\10\10\85\73\67\111\114\110\101\114\95\52\46\80\97\114\101\110\116\32\61\32\79\112\101\110\10")()end)
+
+
+    MainSection:NewButton("Adolf Rizzler", "Freaking W Rizz😃👍", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/mikhailramlal/Rizzer/main/main"))()    end)
+
+        MainSection:NewButton("Big Head", "Thats What She Said🤣😂", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/sysGhost-aka-BiKode/Scripts2022/main/BigHeadV3_Unpatched", true))()    end)
+
+            MainSection:NewButton("Big Boy", "🔥Makes You Tall👍", function()
+                local LocalPlayer = game:GetService("Players").LocalPlayer
+                local Character = LocalPlayer.Character
+                local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+                
+                function rm()
+                    for i,v in pairs(Character:GetDescendants()) do
+                        if v:IsA("BasePart") then
+                            if v.Name == "Handle" or v.Name == "Head" then
+                                if Character.Head:FindFirstChild("OriginalSize") then
+                                    Character.Head.OriginalSize:Destroy()
+                                end
+                            else
+                                for i,cav in pairs(v:GetDescendants()) do
+                                    if cav:IsA("Attachment") then
+                                        if cav:FindFirstChild("OriginalPosition") then
+                                            cav.OriginalPosition:Destroy()
+                                        end
+                                    end
+                                end
+                                v:FindFirstChild("OriginalSize"):Destroy()
+                                if v:FindFirstChild("AvatarPartScaleType") then
+                                    v:FindFirstChild("AvatarPartScaleType"):Destroy()
+                                end
+                            end
+                        end
+                    end
+                end
+                
+                rm()
+                wait(0.5)
+                Humanoid:FindFirstChild("BodyProportionScale"):Destroy()
+                wait(1)
+                
+                rm()
+                wait(0.5)
+                Humanoid:FindFirstChild("BodyHeightScale"):Destroy()
+                wait(1)
+                
+                rm()
+                wait(0.5)
+                Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
+                wait(1)
+                
+                rm()
+                wait(0.5)
+                Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
+                wait(1)
+                
+                rm()
+                wait(0.5)
+                Humanoid:FindFirstChild("HeadScale"):Destroy()
+                wait(1)        end)
+
+
+				MainSection:NewButton("Chat Spy", "Lets You See Private Messages (CLOSE GUI)", function()
+					local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+					local Window = OrionLib:MakeWindow({Name = "Anir Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+					
+					local Tab = Window:MakeTab({
+						Name = "Main",
+						Icon = "rbxassetid://4483345998",
+						PremiumOnly = false
+					})
+					
+					local Section = Tab:AddSection({
+						Name = "Chat Log's"
+					})
+					
+					--[[
+					Name = <string> - The name of the section.
+					]]
+					OrionLib:MakeNotification({
+						Name = "From Anir",
+						Content = "U better ont leak it!",
+						Image = "rbxassetid://4483345998",
+						Time = 5
+					})
+					
+					--[[
+					Title = <string> - The title of the notification.
+					Content = <string> - The content of the notification.
+					Image = <string> - The icon of the notification.
+					Time = <number> - The duration of the notfication.
+					]]
+					--This script reveals ALL hidden messages in the default chat
+					--chat "/spy" to toggle!
+					enabled = true
+					--if true will check your messages too
+					spyOnMyself = true
+					--if true will chat the logs publicly (fun, risky)
+					public = false
+					--if true will use /me to stand out
+					publicItalics = true
+					--customize private logs
+					privateProperties = {
+						Color = Color3.fromRGB(0,255,255); 
+						Font = Enum.Font.SourceSansBold;
+						TextSize = 18;
+					}
+					local StarterGui = game:GetService("StarterGui")
+					local Players = game:GetService("Players")
+					local player = Players.LocalPlayer
+					local saymsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
+					local getmsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("OnMessageDoneFiltering")
+					local instance = (_G.chatSpyInstance or 0) + 1
+					_G.chatSpyInstance = instance
+					 
+					local function onChatted(p,msg)
+						if _G.chatSpyInstance == instance then
+							if p==player and msg:lower():sub(1,4)=="/spy" then
+								enabled = not enabled
+								wait(0.3)
+								privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+								StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+							elseif enabled and (spyOnMyself==true or p~=player) then
+								msg = msg:gsub("[\n\r]",''):gsub("\t",' '):gsub("[ ]+",' ')
+								local hidden = true
+								local conn = getmsg.OnClientEvent:Connect(function(packet,channel)
+									if packet.SpeakerUserId==p.UserId and packet.Message==msg:sub(#msg-#packet.Message+1) and (channel=="All" or (channel=="Team" and public==false and Players[packet.FromSpeaker].Team==player.Team)) then
+										hidden = false
+									end
+								end)
+								wait(1)
+								conn:Disconnect()
+								if hidden and enabled then
+									if public then
+										saymsg:FireServer((publicItalics and "/me " or '').."{SPY} [".. p.Name .."]: "..msg,"All")
+									else
+										privateProperties.Text = "{SPY} [".. p.Name .."]: "..msg
+										StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+									end
+								end
+							end
+						end
+					end
+					 
+					for _,p in ipairs(Players:GetPlayers()) do
+						p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+					end
+					Players.PlayerAdded:Connect(function(p)
+						p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+					end)
+					privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+					StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+					local chatFrame = player.PlayerGui.Chat.Frame
+					chatFrame.ChatChannelParentFrame.Visible = true
+					chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)				end)
+
+					MainSection:NewButton("Eat Hats", "Legit Just Lets You Eat Ur Hats💀", function()
+--made by Nightmare#0930
+local lp = game.Players.LocalPlayer
+local char = lp.Character
+
+for i, v in pairs(char:GetChildren()) do
+    if v:IsA("BallSocketConstraint") then
+        v:Destroy()
+    end
+end
+
+for i, v in pairs(char:GetChildren()) do
+    if v:IsA("HingeConstraint") then
+        v:Destroy()
+    end
+end
+
+for i, v in pairs(char.Humanoid:GetAccessories()) do
+local hat = v.Name
+
+char[hat].Archivable = true
+local fake = char[hat]:Clone()
+fake.Parent = char
+fake.Handle.Transparency = 1
+
+local hold = false
+local enabled = false
+
+char[hat].Handle.AccessoryWeld:Destroy()
+
+local tool = Instance.new("Tool", lp.Backpack)
+tool.RequiresHandle = true
+tool.CanBeDropped = false
+tool.Name = hat
+
+local handle = Instance.new("Part", tool)
+handle.Name = "Handle"
+handle.Size = Vector3.new(1, 1, 1)
+handle.Massless = true
+handle.Transparency = 1
+
+local positions = {
+    forward = tool.GripForward,
+    pos = tool.GripPos,
+    right = tool.GripRight,
+    up = tool.GripUp
+}
+
+tool.Equipped:connect(function()
+ hold = true
+end)
+
+tool.Unequipped:connect(function()
+   hold = false
+end)
+
+tool.Activated:connect(function()
+    if enabled == false then
+        enabled = true
+        tool.GripForward = Vector3.new(-0.976,0,-0.217)
+    tool.GripPos = Vector3.new(.95,-0.76,1.4)
+    tool.GripRight = Vector3.new(0.217,0, 0.976)
+    tool.GripUp = Vector3.new(0,1,0)
+    wait(.8)
+    tool.GripForward = positions.forward
+    tool.GripPos = positions.pos
+    tool.GripRight = positions.right
+    tool.GripUp = positions.up
+    enabled = false
+    end
+end)
+
+game:GetService("RunService").Heartbeat:connect(function()
+    pcall(function()
+       char[hat].Handle.Velocity = Vector3.new(30, 0, 0)
+if hold == false then
+    char[hat].Handle.CFrame = fake.Handle.CFrame
+elseif hold == true then
+    char[hat].Handle.CFrame = handle.CFrame
+    end
+end)
+end)
+end					end)
+				
+
+MainSection:NewButton("R6 Animations", "Gives You Cool R6 Animations😎👍", function()
+	save = nil
+	c3 = function(r,g,b) return Color3.new(r/255,g/255,b/255) end
+	 
+	--do something ro get save file
+	 
+	if not save then
+		save = {
+			ui = {
+				highlightcolor = c3(33, 122, 255);
+				errorcolor = c3(255, 0, 0);
+				--AnimationPriority colors
+				core = c3(65, 65, 65);
+				idle = c3(134, 200, 230);
+				movement = c3(114, 230, 121);
+				action = c3(235, 235, 235);
+			};
+			preferences = {
+				
+			};
+			custom_animations = {
+				template = {
+					Title = "";
+					AnimationId = "rbxassetid://";
+					Image = "rbxassetid://2151539455"; --not required
+					Speed = 1;
+					Time = 0;
+					Weight = 1;
+					Loop = false;
+					R6 = true;
+					Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+				};
+			};
+		}
+	end
+	 
+	lp = game:GetService("Players").LocalPlayer
+	m = lp:GetMouse()
+	 
+	function getHumanoid()
+		if not lp.Character then return nil end
+		return lp.Character:FindFirstChildWhichIsA("Humanoid")
+	end
+	 
+	screengui = game:GetObjects("rbxassetid://02159099015")[1]
+	screengui.Parent = game:GetService("CoreGui")
+	main = screengui.Topbar.Main
+	 
+	mainframe = main.MainFrame
+	scrollframe = mainframe.ScrollingFrame
+	items = scrollframe.Items
+	search = scrollframe.SearchFrame.Search
+	searchbutton = scrollframe.SearchFrame.ImageLabel.TextButton
+	searchframe = scrollframe.SearchFrame
+	 
+	preview = main.Preview
+	previewimage = preview.Image
+	previewtitle = preview.Title
+	previewdesc = preview.Desc
+	 
+	function draggable(gObj)
+		local UserInputService = game:GetService("UserInputService")
+	 
+		local gui = gObj
+		
+		local dragging
+		local dragInput
+		local dragStart
+		local startPos
+		
+		local function update(input)
+			local delta = input.Position - dragStart
+			gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		end
+		
+		gui.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+				dragging = true
+				dragStart = input.Position
+				startPos = gui.Position
+				
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragging = false
+					end
+				end)
+			end
+		end)
+		
+		gui.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				dragInput = input
+			end
+		end)
+		
+		UserInputService.InputChanged:Connect(function(input)
+			if input == dragInput and dragging then
+				update(input)
+			end
+		end)
+	end
+	function tween(object,style,direction,t,goal)
+		local tweenservice = game:GetService("TweenService")
+		local tweenInfo = TweenInfo.new(t,Enum.EasingStyle[style],Enum.EasingDirection[direction])
+		local tween = tweenservice:Create(object,tweenInfo,goal)
+		tween:Play()
+		return tween
+	end
+	 
+	draggable(screengui.Topbar)
+	 
+	function checkIfStudio()
+		return game.Name ~= "Game"
+	end
+	 
+	if not checkIfStudio() then
+		print'Client is not in Roblox studio'
+		--main.Size = UDim2.new(0.398, 0, 0.477, 0)
+	end
+	 
+	search.Changed:connect(function(p)
+		local n = 0
+		for i,v in pairs (items:GetChildren()) do
+			if v:IsA("TextButton") and not string.find(v.Title.Text:lower(), search.Text:lower()) then
+				v.Visible = false
+			elseif v:IsA("TextButton") and string.find(v.Title.Text:lower(), search.Text:lower()) then
+				v.Visible = true
+				n = n + 1
+			end
+		end
+		if p == "Text" then
+			if n > 0 then
+				tween(searchframe, "Sine", "Out", 0.25, {
+					BorderColor3 = save.ui.highlightcolor;
+				})
+				wait(0.25)
+				tween(searchframe, "Sine", "In", 0.5, {
+					BorderColor3 = c3(58, 58, 58);
+				})
+			else
+				tween(searchframe, "Sine", "Out", 0.25, {
+					BorderColor3 = save.ui.errorcolor;
+				})
+				wait(0.25)
+				tween(searchframe, "Sine", "In", 0.5, {
+					BorderColor3 = c3(58, 58, 58);
+				})
+			end
+		end
+	end)
+	 
+	spawn(function()
+		while wait(10) do
+			--auto-save every 10 seconds
+		end
+	end)
+	 
+	cam = workspace.CurrentCamera
+	 
+	running = {}
+	popAnims = {
+		armturbine = {
+			Title = "Arm Turbine";
+			AnimationId = "rbxassetid://259438880";
+			Speed = 1.5;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		weirdsway = {
+			Title = "Weird Sway";
+			AnimationId = "rbxassetid://248336677";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		weirdfloat = {
+			Title = "Weird Float";
+			AnimationId = "rbxassetid://248336459";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		weirdpose = {
+			Title = "Weird Pose";
+			AnimationId = "rbxassetid://248336163";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		penguinslide = {
+			Title = "Penguin Slide";
+			AnimationId = "rbxassetid://282574440";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		scream = {
+			Title = "Scream";
+			AnimationId = "rbxassetid://180611870";
+			Speed = 1.5;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		crouch = {
+			Title = "Crouch";
+			AnimationId = "rbxassetid://182724289";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		happydance = {
+			Title = "Happy Dance";
+			AnimationId = "rbxassetid://248335946";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		floatinghead = {
+			Title = "Floating Head";
+			AnimationId = "rbxassetid://121572214";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		balloonfloat = {
+			Title = "Balloon Float";
+			AnimationId = "rbxassetid://148840371";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		pinchnose = {
+			Title = "Pinch Nose";
+			AnimationId = "rbxassetid://30235165";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		goal = {
+			Title = "Goal!";
+			AnimationId = "rbxassetid://28488254";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		cry = {
+			Title = "Cry";
+			AnimationId = "rbxassetid://180612465";
+			Speed = 0;
+			Time = 1.5;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		partytime = {
+			Title = "Party Time";
+			AnimationId = "rbxassetid://33796059";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		moondance = {
+			Title = "Moon Dance";
+			AnimationId = "rbxassetid://27789359";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		insanelegs = {
+			Title = "Insane Legs";
+			AnimationId = "rbxassetid://87986341";
+			Speed = 99;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		rotation = {
+			Title = "Rotation";
+			AnimationId = "rbxassetid://136801964";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		insanerotation = {
+			Title = "Insane Rotation";
+			AnimationId = "rbxassetid://136801964";
+			Speed = 99;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		roar = {
+			Title = "Roar";
+			AnimationId = "rbxassetid://163209885";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		spin = {
+			Title = "Spin";
+			AnimationId = "rbxassetid://188632011";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		zombiearms = {
+			Title = "Zombie Arms";
+			AnimationId = "rbxassetid://183294396";
+			Speed = 0;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		insane = {
+			Title = "Insane";
+			AnimationId = "rbxassetid://33796059";
+			Speed = 99;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		neckbreak = {
+			Title = "Neck Break";
+			AnimationId = "rbxassetid://35154961";
+			Speed = 0;
+			Time = 2;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		headdetach = {
+			Title = "Head Detach";
+			AnimationId = "rbxassetid://35154961";
+			Speed = 0;
+			Time = 3;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		idle = {
+			Title = "Idle";
+			AnimationId = "rbxassetid://180435571";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+		charleston = {
+			Title = "Charleston";
+			AnimationId = "rbxassetid://429703734";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+	}
+	robloxOwns = {}
+	 
+	ownerOwns = {}
+	 
+	customAnims = {}
+	 
+	function getOwnedAnimations(userid)
+		local httpserv = game:GetService("HttpService")
+		local owned = httpserv:GetAsync("https://inventory.roblox.com/v1/users/"..userid.."/inventory/Animation?pageNumber=1&itemsPerPage=10", true)
+		return owned
+	end
+	 
+	 
+	function getAnim(name)
+		return popAnims[name] or customAnims[name]
+	end
+	function runAnim(info, humanoid)
+		local animation = Instance.new("Animation")
+		animation.AnimationId = info.AnimationId
+		
+		local animtrack = humanoid:LoadAnimation(animation)
+		table.insert(running,animtrack)
+		animtrack.Priority = info.Priority
+		animtrack.Looped = info.Loop
+		
+		animtrack:Play()
+		animtrack:AdjustSpeed(info.Speed)
+		animtrack:AdjustWeight(info.Weight)
+		animtrack.TimePosition = info.Time
+		
+		animtrack.Stopped:connect(function()
+			for i = 1,#running do
+				if running[i] == animtrack then
+					table.remove(running,i)
+				end
+			end
+		end)
+		
+		return animtrack
+	end
+	 
+	template = items.Template
+	template.Parent = nil
+	 
+	function clear()
+		for i,v in pairs (items:GetChildren()) do
+			if v:IsA("TextButton") then
+				v:Destroy()
+			end
+		end
+	end
+	 
+	--[[
+		idle = {
+			Title = "Idle";
+			AnimationId = "rbxassetid://180435571";
+			Speed = 1;
+			Time = 0;
+			Weight = 1;
+			Loop = true;
+			R6 = true;
+			Priority = 2; --0, 1, 2, and 1000 are acceptable priorities
+		};
+	--]]
+	 
+	function createbutton(v)
+		local temp = template:Clone()
+		temp.Parent = items
+		temp.Name = v.Title
+		temp.Title.Text = v.Title
+		temp.Image.Image = v.Image or "rbxassetid://2151539455"
+		if temp.Image.Image == "rbxassetid://2151539455" then
+			temp.Image.ImageColor3 = (v.Priority == 0 and save.ui.idle) or (v.Priority == 1 and save.ui.movement) or (v.Priority == 2 and save.ui.action) or (v.Priority == 1000 and save.ui.core)
+		else
+			temp.Image.ImageColor3 = Color3.new(1,1,1)
+		end
+		temp.LayoutOrder = math.random(1,10000)
+		
+		temp.Settings.AnimationId.Value = v.AnimationId
+		temp.Settings.Loop.Value = v.Loop
+		temp.Settings.Priority.Value = v.Priority
+		temp.Settings.R6.Value = v.R6
+		temp.Settings.Speed.Value = v.Speed
+		temp.Settings.Weight.Value = v.Weight
+		temp.Settings.Time.Value = v.Time
+		
+		temp.MouseEnter:connect(function()
+			preview.Title.Text = v.Title
+			preview.Desc.Text = "Speed: "..tostring(v.Speed).."\nPriority: "..tostring(v.Priority).."\nR6 Rig: "..tostring(v.R6).."\nAnimID: "..tostring(v.AnimationId).."\n\n"..(v.Description or "No description provided")
+			
+			preview.Image.Image = v.Image or "rbxassetid://2151539455"
+			if preview.Image.Image == "rbxassetid://2151539455" then
+				preview.Image.ImageColor3 = (v.Priority == 0 and save.ui.idle) or (v.Priority == 1 and save.ui.movement) or (v.Priority == 2 and save.ui.action) or (v.Priority == 1000 and save.ui.core)
+			else
+				preview.Image.ImageColor3 = Color3.new(1,1,1)
+			end
+		end)
+		temp.MouseButton1Click:connect(function()
+			temp.Border.ImageColor3 = save.ui.highlightcolor
+			for i,anim in pairs (running) do
+				if anim.Animation.AnimationId == v.AnimationId then
+					anim:Stop()
+					return
+				end
+			end
+			temp.Border.Visible = true
+			local rAnim = runAnim(v, getHumanoid())
+			rAnim.Stopped:connect(function()
+				temp.Border.Visible = false
+			end)
+		end)
+		
+		return temp
+	end
+	 
+	dropdown = mainframe.ScrollingFrame.DropdownFrame
+	elements = dropdown.HoldContentsFrame.Frame.Elements
+	dropdownenabled = true
+	 
+	tween(dropdown.HoldContentsFrame.Frame, "Linear", "In", 0, {
+		Position = UDim2.new(0,0,-1,0)
+	})
+	dropdown.HoldContentsFrame.Frame.Visible = false
+	 
+	dropdowndeactivate = screengui.DropdownDeactivate
+	dropdowndeactivate.Visible = false
+	 
+	function hideddown()
+		tween(dropdown.HoldContentsFrame.Frame, "Linear", "In", 0, {
+			Position = UDim2.new(0,0,-1,0)
+		})
+		dropdown.HoldContentsFrame.Frame.Visible = false
+		dropdowndeactivate.Visible = false
+		dropdownenabled = true
+		
+		for i,e in pairs (elements:GetChildren()) do
+			if e:IsA("TextButton") then
+				e.BackgroundColor3 = c3(46,46,46)
+			end
+		end
+	end
+	 
+	dropdown.MouseButton1Click:connect(function()
+		print'ddownclick'
+		dropdownenabled = not dropdownenabled
+		if dropdownenabled then
+			hideddown()
+		else
+			tween(dropdown.HoldContentsFrame.Frame, "Linear", "In", 0.3, {
+				Position = UDim2.new(0,0,0,0)
+			})
+			dropdown.HoldContentsFrame.Frame.Visible = true
+			dropdowndeactivate.Visible = true
+		end
+	end)
+	 
+	dropdowndeactivate.MouseButton1Down:connect(function()
+		hideddown()
+	end)
+	 
+	for i,v in pairs (elements:GetChildren()) do
+		if v:IsA("TextButton") then
+			v.MouseEnter:connect(function()
+				for i,e in pairs (elements:GetChildren()) do
+					if e:IsA("TextButton") then
+						e.BackgroundColor3 = c3(46,46,46)
+					end
+				end
+				v.BackgroundColor3 = save.ui.highlightcolor
+			end)
+			v.MouseButton1Click:connect(function()
+				hideddown()
+				dropdown.TextLabel.Text = v.Name
+				sort(v.Name)
+			end)
+		end
+	end
+	 
+	function sort(category)
+		clear()
+		if category == "Popular" then
+			for i,v in pairs (popAnims) do
+				local temp = createbutton(v)
+			end
+		elseif category == "By Roblox" then
+			
+		end
+	end
+	 
+	game:GetService('RunService').RenderStepped:connect(function()
+		items.Parent.CanvasSize = UDim2.new(0,0,0,items.GridLayout.AbsoluteContentSize.Y + 50)
+	end)
+	 
+	sort("Popular")end)
+
+
+    MainSection:NewButton("Universal Aimbot", "Use This If You Have Shit Aim😁👍", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Blissful4992/Miscellaneous/main/UNIVERSAL.lua"))()
+	end)
+
+
+    -- MAIN
+    local Main = Window:NewTab("Broken Scripts")
+    local MainSection = Main:NewSection("This Is Where The Broken Scripts Go")
+
+    MainSection:NewButton("Walkspeed Changer", "Broken", function()
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local JumpPowerWalkSpeed = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Top = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local close = Instance.new("TextButton")
+local JumpPowerChanger = Instance.new("TextBox")
+local WalkSpeedChanger = Instance.new("TextBox")
+
+--Properties:
+
+JumpPowerWalkSpeed.Name = "JumpPowerWalkSpeed"
+JumpPowerWalkSpeed.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+JumpPowerWalkSpeed.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+JumpPowerWalkSpeed.ResetOnSpawn = false
+
+Main.Name = "Main"
+Main.Parent = JumpPowerWalkSpeed
+Main.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+Main.Position = UDim2.new(0.414008319, 0, 0.424691409, 0)
+Main.Size = UDim2.new(0.171983361, 0, 0.0987654254, 0)
+
+Top.Name = "Top"
+Top.Parent = Main
+Top.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+Top.BorderSizePixel = 0
+Top.Size = UDim2.new(1, 0, 0.231244698, 0)
+
+TextLabel.Parent = Top
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Size = UDim2.new(0.92806381, 0, 1, 0)
+TextLabel.Font = Enum.Font.Code
+TextLabel.Text = "JumpPower And WalkSpeed Changer by mug#1941"
+TextLabel.TextColor3 = Color3.fromRGB(74, 74, 74)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+close.Name = "close"
+close.Parent = Top
+close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+close.BackgroundTransparency = 1.000
+close.Position = UDim2.new(0.946004272, 0, 0, 0)
+close.Size = UDim2.new(0.0539956801, 0, 1, 0)
+close.Font = Enum.Font.Code
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(74, 74, 74)
+close.TextScaled = true
+close.TextSize = 14.000
+close.TextWrapped = true
+
+JumpPowerChanger.Name = "JumpPowerChanger"
+JumpPowerChanger.Parent = Main
+JumpPowerChanger.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+JumpPowerChanger.BorderColor3 = Color3.fromRGB(74, 74, 74)
+JumpPowerChanger.Position = UDim2.new(0.517852306, 0, 0.300000042, 0)
+JumpPowerChanger.Size = UDim2.new(0.453921854, 0, 0.593000054, 0)
+JumpPowerChanger.Font = Enum.Font.SourceSans
+JumpPowerChanger.PlaceholderColor3 = Color3.fromRGB(74, 74, 74)
+JumpPowerChanger.PlaceholderText = "Enter JumpPower Here"
+JumpPowerChanger.Text = ""
+JumpPowerChanger.TextColor3 = Color3.fromRGB(74, 74, 74)
+JumpPowerChanger.TextScaled = true
+JumpPowerChanger.TextSize = 14.000
+JumpPowerChanger.TextWrapped = true
+
+WalkSpeedChanger.Name = "WalkSpeedChanger"
+WalkSpeedChanger.Parent = Main
+WalkSpeedChanger.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+WalkSpeedChanger.BorderColor3 = Color3.fromRGB(74, 74, 74)
+WalkSpeedChanger.Position = UDim2.new(0.0282258056, 0, 0.300000042, 0)
+WalkSpeedChanger.Size = UDim2.new(0.462174296, 0, 0.592999995, 0)
+WalkSpeedChanger.Font = Enum.Font.SourceSans
+WalkSpeedChanger.PlaceholderColor3 = Color3.fromRGB(74, 74, 74)
+WalkSpeedChanger.PlaceholderText = "Enter WalkSpeed Here"
+WalkSpeedChanger.Text = ""
+WalkSpeedChanger.TextColor3 = Color3.fromRGB(74, 74, 74)
+WalkSpeedChanger.TextScaled = true
+WalkSpeedChanger.TextSize = 14.000
+WalkSpeedChanger.TextWrapped = true
+
+-- Scripts:
+
+local function APILW_fake_script() -- close.LocalScript 
+	local script = Instance.new('LocalScript', close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local plr = game.Players.LocalPlayer
+		local char = plr.Character
+		local hum = char.Humanoid
+		hum.JumpPower = 50
+		hum.WalkSpeed = 16
+		local frame = script.Parent.Parent.Parent
+		frame:TweenPosition(UDim2.new(0.4, 0,1.5, 0))
+		
+		wait(1)
+		frame.Parent:Destroy()
+	end)
+end
+coroutine.wrap(APILW_fake_script)()
+local function PZHQ_fake_script() -- Main.Draggable 
+	local script = Instance.new('LocalScript', Main)
+
+	local Frame = script.Parent
+	Frame.Selectable = true
+	Frame.Active = true
+	Frame.Draggable = true
+end
+coroutine.wrap(PZHQ_fake_script)()
+local function EKIGD_fake_script() -- Main.Opening 
+	local script = Instance.new('LocalScript', Main)
+
+	script.Parent.Position = UDim2.new(0.33, 0,2, 0)
+	script.Parent:TweenPosition(UDim2.new(0.33, 0,0.3, 0))
+end
+coroutine.wrap(EKIGD_fake_script)()
+local function NRJZ_fake_script() -- Main.LocalScript 
+	local script = Instance.new('LocalScript', Main)
+
+	while on do
+		for i, v in pairs(game.Players:GetPlayers()) do
+			local target = v
+			local targetchar = v.Character
+			local targethrp = targetchar.HumanoidRootPart
+			local oldcframe = targethrp.Position
+			local plr = game.Players.LocalPlayer
+			local char = plr.Character
+			local hrp = char.HumanoidRootPart
+	
+			targethrp.Anchored = true
+			targethrp.Position = pos
+			
+	
+		end
+	end
+end
+coroutine.wrap(NRJZ_fake_script)()
+local function OALDN_fake_script() -- JumpPowerChanger.ChangeJumpPower 
+	local script = Instance.new('LocalScript', JumpPowerChanger)
+
+	script.Parent.Changed:Connect(function()
+		if tonumber(script.Parent.Text) then
+		local plr = game.Players.LocalPlayer
+		local char = plr.Character
+		local hum = char.Humanoid
+		if tonumber(script.Parent.Text) then
+			hum.JumpPower = tonumber(script.Parent.Text)
+			end
+		else
+			local plr = game.Players.LocalPlayer
+			local char = plr.Character
+			local hum = char.Humanoid
+			hum.JumpPower = 50
+		end
+	end)
+end
+coroutine.wrap(OALDN_fake_script)()
+local function OLVSJ_fake_script() -- WalkSpeedChanger.ChangeWalkSpeed 
+	local script = Instance.new('LocalScript', WalkSpeedChanger)
+
+	script.Parent.Changed:Connect(function()
+		if tonumber(script.Parent.Text) then
+			local plr = game.Players.LocalPlayer
+			local char = plr.Character
+			local hum = char.Humanoid
+			if tonumber(script.Parent.Text) then
+				hum.WalkSpeed = tonumber(script.Parent.Text)
+			end
+		else
+			local plr = game.Players.LocalPlayer
+			local char = plr.Character
+			local hum = char.Humanoid
+			hum.WalkSpeed = 16
+		end
+	end)
+end
+coroutine.wrap(OLVSJ_fake_script)()
+end)
+
+
+MainSection:NewButton("Rogue Hub", "Owner Fucking Deleted It💀🕊️", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Kitzoon/Rogue-Hub/main/Main.lua", true))()
+end)
+
+	-- MAIN
+local Main = Window:NewTab("Slap Battles")
+local MainSection = Main:NewSection("Slap Battles Scripts")
+
+
+    MainSection:NewButton("Dizzy Hub", "Decent Slap Battles Script", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/dizyhvh/slap_battles_gui/main/0.lua"))()
+    end)
+
+    MainSection:NewButton("Slap Royal", "Script Lowkey Ass Just Use Rogue Hub Or Dizzy💀", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/wuvvJCfc"))()    
+    end)
+
+	MainSection:NewButton("R20 Hub", "Really Only Good Script Left😔😐", function()
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/cheesynob39/R20-EXPLOITER/main/Slap_Battles.lua")))()    end)
+
+        -- MAIN
+local Main = Window:NewTab("Isle")
+local MainSection = Main:NewSection("Isle Scripts")
+
+MainSection:NewButton("Isle GUI", "Very Nice Isle Script", function()
+    loadstring(game:HttpGet("https://gist.githubusercontent.com/w-a-e/cf38dd10d3ab3b5171f37841b380466a/raw/3c38a06dfc28e8537d309476037660537378dfbe/gistfile1.txt"))()
+end)
+
+MainSection:NewButton("Krypton GUI", "USE WITH ISLE GUI OR ANTI-CHEAT WILL DETECT", function()
+	loadstring(game:HttpGetAsync("\104\116\116\112\115\58\47\47\107\114\121\112\116\111\110\46\111\110\45\116\111\112\46\119\116\102\47\117\47\226\128\139\226\128\140\226\128\140\226\128\139\226\128\140\226\128\139\226\128\139\226\128\140\226\128\139\226\128\140\226\128\139\226\128\139\226\128\140\226\128\139\226\128\139\226\128\140\226\128\139\226\128\140\226\128\139\226\128\139\226\128\140\226\128\139\226\128\139\226\128\139\226\128\139\226\128\140\226\128\139\226\128\140\226\128\139\226\128\140\226\128\140\226\128\139\226\128\139\226\128\140\226\128\140\226\128\140\226\128\139\226\128\140\226\128\139\226\128\140\226\128\139\226\128\140\226\128\140\226\128\139\226\128\140\226\128\140\226\128\139\226\128\140\226\128\139\226\128\140\226\128\140\226\128\139\226\128\140\226\128\140\226\128\139\226\128\139\226\128\139\226\128\140\226\128\139\226\128\139\226\128\140\226\128\139\226\128\139\226\128\139"))()
+end)   
+	
+	-- MAIN
+    local Main = Window:NewTab("Lumber Tycoon 2")
+    local MainSection = Main:NewSection("Lumber Tycoon 2 Scripts")
+
+    MainSection:NewButton("Butter Hub", "Very Good GUI😃👍", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Butterisgood/butter-hub/main/Butterhub.txt'))()
+    end)
+
+
+    -- MAIN
+local Main = Window:NewTab("Funky Friday")
+local MainSection = Main:NewSection("Funky Friday Scripts")
+
+MainSection:NewButton("Funky Friday Autoplayer", "Plays The Game For You..💀🥱", function()
+ 
+    local vu = game:GetService("VirtualUser")
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+       vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+       wait(1)
+       vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    end)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",true))()
+     local message = Instance.new("Message", workspace)
+            message.Text = "Loaded! If the script is not working, press 'F9' to check for any errors."
+            wait(4.5)
+            message:Destroy()end)
+
+
+                -- MAIN
+local Main = Window:NewTab("Rake Remastered")
+local MainSection = Main:NewSection("Rake Remastered Scripts")
+
+MainSection:NewButton("RealZzHub", "Good Script For A Dead Game💀😭", function()
+    loadstring(game:HttpGet("https://realzzhub.xyz/script.lua"))()
+end)
+
+
+    -- MAIN
+    local Main = Window:NewTab("Da Hood")
+    local MainSection = Main:NewSection("Da Hood Scripts")
+
+    MainSection:NewButton("Raycodex", "Good Da Hood Script😃👍", function()
+        loadstring(game:GetObjects("rbxassetid://5812737894")[1].Source)()    end)
+
+
+
+		    -- MAIN
+			local Main = Window:NewTab("Murder Mystery 2")
+			local MainSection = Main:NewSection("Murder Mystery 2 Scripts")
+		
+			MainSection:NewButton("MM2 GUI", "Good MM2 Script😁👍", function()
+				loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Drifter0507/GUIS/main/MURDER%20MYSTERY%202", true))();
+			end)
+
+
+
+			         -- MAIN
+local Main = Window:NewTab("Combat Warriors")
+local MainSection = Main:NewSection("Combat Warriors Scripts")
+
+    MainSection:NewButton("Cheese GUI", "Hella OP Script😁👍", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/CheeseOnGithub/cheese-hook/main/main%20hydra%20ui.lua",true))()    end)
