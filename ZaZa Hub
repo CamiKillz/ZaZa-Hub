@@ -962,8 +962,8 @@ MainSection:NewButton("R6 Animations", "Gives You Cool R6 Animations😎👍", f
 
 
     MainSection:NewButton("Universal Aimbot", "Use This If You Have Shit Aim😁👍", function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Blissful4992/Miscellaneous/main/UNIVERSAL.lua"))()
-	end)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/AirHub/main/AirHub.lua"))()	
+    end)
 
 
 	-- MAIN
