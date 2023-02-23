@@ -966,6 +966,12 @@ MainSection:NewButton("R6 Animations", "Gives You Cool R6 Animations😎👍", f
     end)
     
     
+    MainSection:NewButton("Owl Hub Aimbot", "Universal Aimbot", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
+end)
+
+    
+    
         MainSection:NewButton("Invisible Tool", "Makes You Invisible", function()
 local offset = 1100
 local invisible = game.Players.LocalPlayer
