@@ -961,12 +961,12 @@ MainSection:NewButton("R6 Animations", "Gives You Cool R6 Animations😎👍", f
 	sort("Popular")end)
 
 
-    MainSection:NewButton("Air Hub Universal Aimbot", "Use This If You Have Shit Aim😁👍", function()
+    MainSection:NewButton("Air Hub Aimbot", "Use This If You Have Shit Aim😁👍", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/AirHub/main/AirHub.lua"))()	
     end)
     
     
-    MainSection:NewButton("Owl Hub Universal Aimbot", "Use This If You Have Shit Aim😁👍", function()
+    MainSection:NewButton("Owl Hub Aimbot", "Use This If You Have Shit Aim😁👍", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
 end)
 
