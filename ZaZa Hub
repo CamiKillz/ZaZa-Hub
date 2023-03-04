@@ -1172,7 +1172,10 @@ end)
 			MainSection:NewButton("MM2 GUI", "Good MM2 Script😁👍", function()
 				loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Drifter0507/GUIS/main/MURDER%20MYSTERY%202", true))();
 			end)
-
+			
+			MainSection:NewButton("Eclipse GUI", "Best MM2 Script?🤔", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script", true))()
+end)
 
 
 			         -- MAIN
