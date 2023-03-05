@@ -959,6 +959,11 @@ MainSection:NewButton("R6 Animations", "Gives You Cool R6 Animations😎👍", f
 	end)
 	 
 	sort("Popular")end)
+	
+	
+	MainSection:NewButton("R15 Animations", "R15 Animations😿", function()
+loadstring(game:HttpGet("https://gitlab.com/Tsuniox/lua-stuff/-/raw/master/R15GUI.lua"))()
+end)
 
 
     MainSection:NewButton("Air Hub Aimbot", "Use This If You Have Shit Aim😁👍", function()
