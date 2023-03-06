@@ -1096,6 +1096,11 @@ game.Players.LocalPlayer.Character.ChildAdded:Connect(
 )    end)
 
 
+ MainSection:NewButton("Anti Fling", "Doesnt Work In R15😁👍", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/Q0Nh2SYx"))()     
+end)
+
+
 	-- MAIN
 local Main = Window:NewTab("Slap Battles")
 local MainSection = Main:NewSection("Slap Battles Scripts")
