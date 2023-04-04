@@ -1,133 +1,25 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib(" | ZaZa Hub V1 |  Deleted Every Script But Buttons Are Still Up", "BloodTheme")
+local Window = Library.CreateLib(" | ZaZa Hub V1 |            Deleted All Scripts ZaZa Hub Is Done.", "BloodTheme")
 
 -- MAIN
-local Main = Window:NewTab("FE Scripts")
-local MainSection = Main:NewSection("FE Scripts")
+local Main = Window:NewTab("Credits")
+local MainSection = Main:NewSection("  Wouldnt Have Been Possible Without These Guys")
 
-
-
-
-
-MainSection:NewButton("Infinite Yield", "FE Admin Commands", function()
+MainSection:NewButton("Alpha - Owner & Dev", "Monkey", function()
 end)
 
-MainSection:NewButton("Speed & Jump ", "Changes Jump Power And Walkspeed ", function()
+MainSection:NewButton("Rice DT - Dev", "Twerk", function()
+end)
 
-    MainSection:NewButton("Rizzer", "Freaking W Rizz😃👍", function()
+MainSection:NewButton("PieterWM - Annoying Fuck", "Why Are You Looking At These", function()
+end)
 
-        MainSection:NewButton("Big Head", "Thats What She Said🤣😂", function()
-           
+MainSection:NewButton("Ice - My Daddy :3", "Fuck Me Daddy!", function()
+end)
 
-            MainSection:NewButton("Big Boy", "🔥Makes You Tall👍", function()
-               
-
-
-				MainSection:NewButton("Chat Spy", "Lets You See Private Messages (CLOSE GUI)", function()
-							
-
-					MainSection:NewButton("Eat Hats", "Legit Just Lets You Eat Ur Hats💀", function()
-
-MainSection:NewButton("R6 Animations", "Gives You Cool R6 Animations😎👍", function()
-	
-	
-	
-	MainSection:NewButton("R15 Animations", "R15 Animations😿", function()
-
-
-    MainSection:NewButton("Air Hub Aimbot", "Use This If You Have Shit Aim😁👍", function()
-    
-    
-    MainSection:NewButton("Owl Hub Aimbot", "Use This If You Have Shit Aim😁👍", function()
-
-
-    
-    
-        MainSection:NewButton("Invisible Tool", "Makes You Invisible", function()
-
-
- MainSection:NewButton("Anti Fling", "Doesnt Work In R15😁👍", function()
-
-
-
-	-- MAIN
-local Main = Window:NewTab("Slap Battles")
-local MainSection = Main:NewSection("Slap Battles Scripts")
-
-
-    MainSection:NewButton("Dizzy Hub", "Decent Slap Battles Script", function()
-    
-
-    MainSection:NewButton("Slap Royal", "Script Lowkey Ass Just Use Rogue Hub Or Dizzy💀", function()
-    
-
-	MainSection:NewButton("R20 Hub", "Really Only Good Script Left😔😐", function()
-	
-        -- MAIN
-local Main = Window:NewTab("Isle")
-local MainSection = Main:NewSection("Isle Scripts")
-
-MainSection:NewButton("Isle GUI", "Very Nice Isle Script", function()
- 
-
-MainSection:NewButton("Krypton GUI", "USE WITH ISLE GUI OR ANTI-CHEAT WILL DETECT", function()
-
-	
-	-- MAIN
-    local Main = Window:NewTab("Lumber Tycoon 2")
-    local MainSection = Main:NewSection("Lumber Tycoon 2 Scripts")
-
-    MainSection:NewButton("Butter Hub", "Very Good GUI😃👍", function()
-
-
-
-    -- MAIN
-local Main = Window:NewTab("Funky Friday")
-local MainSection = Main:NewSection("Funky Friday Scripts")
-
-MainSection:NewButton("Funky Friday Autoplayer", "Plays The Game For You..💀🥱", function()
- 
-  
-
-                -- MAIN
-local Main = Window:NewTab("Rake Remastered")
-local MainSection = Main:NewSection("Rake Remastered Scripts")
-
-MainSection:NewButton("RealZzHub", "Good Script For A Dead Game💀😭", function()
-
-
-
-    -- MAIN
-    local Main = Window:NewTab("Da Hood")
-    local MainSection = Main:NewSection("Da Hood Scripts")
-
-    MainSection:NewButton("Raycodex", "Good Da Hood Script😃👍", function()
-     
-
-
-		    -- MAIN
-			local Main = Window:NewTab("Murder Mystery 2")
-			local MainSection = Main:NewSection("Murder Mystery 2 Scripts")
-		
-			MainSection:NewButton("MM2 GUI", "Good MM2 Script😁👍", function()
-			
-			
-			MainSection:NewButton("Eclipse GUI", "Best MM2 Script?🤔", function()
-
-
-
-			         -- MAIN
-local Main = Window:NewTab("Combat Warriors")
-local MainSection = Main:NewSection("Combat Warriors Scripts")
-
-
-
-
-			         -- MAIN
-local Main = Window:NewTab("LOAD MORE GUI'S")
-local MainSection = Main:NewSection("LOAD ZAZA HUB PAGE 2")
-
-    MainSection:NewButton("Loads ZaZa Hub Page 2", "LOAD MORE", function()
+-- MAIN
+local Main = Window:NewTab("Note")
+local MainSection = Main:NewSection("              Ur PC's Are Being Bicoin Mined Rn")
 
 
         
