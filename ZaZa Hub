@@ -16,10 +16,3 @@ end)
 
 MainSection:NewButton("Ice - My Daddy :3", "Fuck Me Daddy!", function()
 end)
-
--- MAIN
-local Main = Window:NewTab("Note")
-local MainSection = Main:NewSection("              Ur PC's Are Being Bicoin Mined Rn")
-
-
-        
