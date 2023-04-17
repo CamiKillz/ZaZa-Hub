@@ -1,8 +1,4 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib(" | ZaZa Hub V1 |            (DISCONTINUED)", "BloodTheme")
-
-
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib(" | ZaZa Hub V1 |  Deleted Every Script But Buttons Are Still Up", "BloodTheme")
 
 -- MAIN
@@ -1199,21 +1195,4 @@ local MainSection = Main:NewSection("Combat Warriors Scripts")
     MainSection:NewButton("Cheese GUI", "Hella OP Script😁👍", function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/CheeseOnGithub/cheese-hook/main/main%20hydra%20ui.lua",true))()    end)
 
-
-
-
--- MAIN
-local Main = Window:NewTab("Credits")
-local MainSection = Main:NewSection("  Wouldnt Have Been Possible Without These Guys")
-
-MainSection:NewButton("Alpha - Owner & Dev", "Monkey", function()
-end)
-
-MainSection:NewButton("Rice DT - Dev", "Twerk", function()
-end)
-
-MainSection:NewButton("PieterWM - Annoying Fuck", "Why Are You Looking At These", function()
-end)
-
-MainSection:NewButton("Ice - My Daddy :3", "Fuck Me Daddy!", function()
-end)
+        
