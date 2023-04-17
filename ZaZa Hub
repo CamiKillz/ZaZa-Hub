@@ -1201,16 +1201,6 @@ local MainSection = Main:NewSection("Combat Warriors Scripts")
 
 
 
-			         -- MAIN
-local Main = Window:NewTab("LOAD MORE GUI'S")
-local MainSection = Main:NewSection("LOAD ZAZA HUB PAGE 2")
-
-    MainSection:NewButton("Loads ZaZa Hub Page 2", "LOAD MORE", function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/CamiKillz/gghjhntgiesjidhiefsawjsdbgfshiajshdbsuafihndf8hasihd8sgafeh8yvsf8afhesdbsau8gsbdsu9gydsau9fs8dbhsua9/main/a",true))()    end)
-
-
-        
-
 
 -- MAIN
 local Main = Window:NewTab("Credits")
